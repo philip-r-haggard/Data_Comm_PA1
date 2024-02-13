@@ -107,7 +107,6 @@ int main(int argc, char *argv[]) {
 
 		while ((bytes_received = recvfrom(new_socket, chunk, CHUNK_SIZE, 0, (struct sockaddr *)&new_client, &new_clen)) > 0) {
 			if (bytes_received == 1 && chunk[0] == '\n') {
-				cout << "Received delimiter. End of transmission.\n";
 				goto jmp;
 			}
 

@@ -58,7 +58,6 @@ int main(int argc, char *argv[]) {
 
 	// receive random port number from server through socket
 	recvfrom(mysocket, handshake, 512, 0, (struct sockaddr *)&server, &slen);
-	cout << handshake << endl;
 
 	// close negotiated port socket
 	close(mysocket);
@@ -96,8 +95,7 @@ int main(int argc, char *argv[]) {
 			chunk[file.gcount()] = '\0';
 			if (sendto(new_socket, chunk, file.gcount(), 0, (struct sockaddr *)&new_server, new_slen) == -1) {
 				cout << "Error in file sendto function.\n";
-			} else {
-				cout << "Sending " << file.gcount() << " bytes: " << chunk << endl;
+                goto jmp;
 			}
 
 			bytes_received = recvfrom(new_socket, response, CHUNK_SIZE, 0, (struct sockaddr *)&new_server, &new_slen);
@@ -114,13 +112,13 @@ int main(int argc, char *argv[]) {
 				goto jmp;
 			}
 
+            cout << response << endl;
+
 		}
 
 		const char delimiter[] = "\n";
 		if (sendto(new_socket, delimiter, strlen(delimiter), 0, (struct sockaddr *)&new_server, new_slen) == -1) {
 			cout << "Error sending delimiter.\n";
-		} else {
-			cout << "Sent delimiter.\n";
 		}
 	}
 
