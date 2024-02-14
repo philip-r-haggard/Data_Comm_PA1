@@ -112,8 +112,8 @@ int main(int argc, char *argv[]) {
 				cout << "Error in file transfer process.\n";
 				goto jmp;
 			}
-
-            cout << response << endl;
+			
+			cout << response << endl;
 
 		}
 
