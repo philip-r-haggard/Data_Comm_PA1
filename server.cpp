@@ -1,8 +1,9 @@
 /*
 
-Authors: Philip Haggard & Lael Lum
+Authors: Philip Haggard (prh148) & Lael Lum (all655)
 
 Sources consulted:
+
 digitalocean.com
 w3schools.com
 geeksforgeeks.com

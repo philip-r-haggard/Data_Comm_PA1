@@ -1,7 +1,6 @@
 /*
 
-Authors: Philip Haggard & Lael Lum
-NetIDs:  prh148           all655
+Authors: Philip Haggard (prh148) & Lael Lum (all655)
 
 Sources consulted:
 
